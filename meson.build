@@ -35,7 +35,11 @@ exe = executable(
   [
     'main.cpp',
     'Game.cpp',
-    'Game.hpp'
+    'Game.hpp',
+    'TextureManager.cpp',
+    'TextureManager.hpp',
+    'GameObject.cpp',
+    'GameObject.hpp'
   ],
   dependencies : [
     sdl2,

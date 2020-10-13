@@ -1,9 +1,13 @@
 
 #include "Game.hpp"
+#include "TextureManager.hpp"
+#include "GameObject.hpp"
 
 SDL_Texture *playerTex;
 
 SDL_Rect srcR, destR;
+
+GameObject *player, *enemy;
 
 Game::Game() {
 
@@ -42,14 +46,11 @@ void Game::init(const char* title, int xpos, int ypos, int width, int height, bo
     } else {
         isRunning = false;
     }
+    // get player texture, subroutine from texture manager
+    // playerTex = TextureManager::LoadTexture("assets/player.png", renderer);
 
-    // create a temporary surface for player texture
-    SDL_Surface *temp_surface = IMG_Load("assets/player.png");
-    // get player texture
-    playerTex = SDL_CreateTextureFromSurface(renderer,  temp_surface);
-
-    // clean surface
-    SDL_FreeSurface(temp_surface);
+    player = new GameObject("assets/player.png", renderer, 0, 0);
+    enemy = new GameObject("assets/enemy.png", renderer, 60, 60);
 }
 
 
@@ -66,18 +67,16 @@ void Game::handleEvents() {
 }
 
 void Game::update() {
-    cnt++;
-    destR.h = 64;
-    destR.w = 64;
-    destR.x = cnt;
-    std::cout << cnt << std::endl;
+    player->Update();
+    enemy->Update();
 }
 
 void Game::render() {
     // clear stuff from renderer
     SDL_RenderClear(renderer);
     // this is where we add stuff to renderer
-    SDL_RenderCopy(renderer, playerTex, NULL, &destR);
+    player->Render();
+    enemy->Render();
     // present render
     SDL_RenderPresent(renderer);
 }
