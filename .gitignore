@@ -1,0 +1,7 @@
+# remove debug folders
+debug/
+release/
+build/
+builddir/
+
+# add more if needed.
