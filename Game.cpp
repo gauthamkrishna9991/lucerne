@@ -24,6 +24,9 @@ void Game::init(const char* title, int xpos, int ypos, int width, int height, bo
 
         if (window) {
             std::cout << "Window Created" << std::endl;
+        } else {
+            std::cout << "Error showing window: " << SDL_GetError() << std::endl;
+            exit(1);
         }
 
         renderer = SDL_CreateRenderer(window, -1, 0);
@@ -31,6 +34,9 @@ void Game::init(const char* title, int xpos, int ypos, int width, int height, bo
         if (renderer) {
             SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
             std::cout << "Renderer Created." << std::endl;
+        } else {
+            std::cout << "Error creating renderer: " << SDL_GetError() << std::endl;
+            exit(2);
         }
         isRunning = true;
     } else {
@@ -61,10 +67,9 @@ void Game::handleEvents() {
 
 void Game::update() {
     cnt++;
-    destR.h = 128;
-    destR.w = 128;
+    destR.h = 64;
+    destR.w = 64;
     destR.x = cnt;
-    SDL_Delay(100);
     std::cout << cnt << std::endl;
 }
 

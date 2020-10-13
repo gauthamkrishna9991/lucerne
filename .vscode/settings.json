@@ -1,5 +1,6 @@
 {
     "mesonbuild.configureOnOpen": true,
+    "mesonbuild.buildFolder": "debug",
     "zenMode.hideLineNumbers": false,
     "zenMode.hideActivityBar": false,
     "zenMode.centerLayout": false
