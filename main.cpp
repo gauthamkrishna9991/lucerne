@@ -15,7 +15,7 @@ int main
     // char **argv
 ) {
     game = new Game();
-    game->init("GKEngine", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 800, 600, true);
+    game->init("GKEngine", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 800, 600, false);
     while(game->is_running()) {
         game->handleEvents();
         game->update();

@@ -8,6 +8,12 @@ project('com.github.gauthamkrishna9991.lucerne', 'cpp',
 
 # SDL2 Dependency
 sdl2 = dependency('sdl2')
+# libpng16 dependency
+libpng16 = dependency('libpng16')
+# zlib dependency
+zlib = dependency('zlib')
+# SDL2 image dependency
+sdl2_image = dependency('SDL2_image')
 
 exe = executable(
   'lucerne',
@@ -17,7 +23,10 @@ exe = executable(
     'Game.hpp'
   ],
   dependencies : [
-    sdl2
+    sdl2,
+    libpng16,
+    zlib,  
+    sdl2_image
   ],
   install : true)
 
