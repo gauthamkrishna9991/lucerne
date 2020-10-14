@@ -51,6 +51,7 @@ exe = executable(
     zlib,  
     sdl2_image
   ],
-  install : true)
+  install : true
+)
 
 test('basic', exe)
