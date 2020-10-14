@@ -24,6 +24,10 @@ sdl2_image = dependency('SDL2_image')
 #   - main.cpp
 #   - Game.cpp
 #   - Game.hpp
+#   - TextureManager.cpp
+#   - TextureManager.hpp
+#   - GameObject.cpp
+#   - GameObject.hpp
 # dependencies:
 #   - sdl2
 #   - libpng16
