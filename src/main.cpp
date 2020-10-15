@@ -1,6 +1,6 @@
 #include <iostream>
 
-// include game header
+// Include the Game Header
 #include "Game.hpp"
 
 // maybe we'll use it somewhere. Keep it for now
