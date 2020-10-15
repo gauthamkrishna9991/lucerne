@@ -30,6 +30,7 @@ void Game::init(const char* title, int xpos, int ypos, int width, int height, bo
             std::cout << "Window Created" << std::endl;
         } else {
             std::cout << "Error showing window: " << SDL_GetError() << std::endl;
+            // if unable to create a window, exit with 1
             exit(1);
         }
 
@@ -40,6 +41,7 @@ void Game::init(const char* title, int xpos, int ypos, int width, int height, bo
             std::cout << "Renderer Created." << std::endl;
         } else {
             std::cout << "Error creating renderer: " << SDL_GetError() << std::endl;
+            //  if unable to create a renderer, exit with 1
             exit(2);
         }
         isRunning = true;
