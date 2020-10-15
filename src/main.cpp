@@ -21,16 +21,20 @@ int main
     // int argc,
     // char **argv
 ) {
+    // this is for limiting framerate
     const int FPS = 60;
+    // framedelay does almost the same thing
     const int frameDelay = 1000 / FPS;
-
+    // frame start ticks
     Uint32 frameStart;
+    // how much time a frame takes
     int frameTime;
     
     // create a game
     game = new Game();
     // window with name, positions and full screen status
     game->init("GKEngine", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 800, 600, false);
+    // while the game is running, limit it's framerates
     while(game->is_running()) {
         // get the ticks for start frame
         frameStart = SDL_GetTicks();
