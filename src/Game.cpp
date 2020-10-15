@@ -56,8 +56,10 @@ void Game::init(const char* title, int xpos, int ypos, int width, int height, bo
             // exit with 2
             exit(2);
         }
+        // this will make it running
         isRunning = true;
     } else {
+        // this will stop making it run
         isRunning = false;
     }
     // Get player and enemy game object
@@ -65,7 +67,7 @@ void Game::init(const char* title, int xpos, int ypos, int width, int height, bo
     enemy = new GameObject("assets/enemy.png", renderer, 60, 60);
 }
 
-
+// handling events: incomplete
 void Game::handleEvents() {
     SDL_Event event;
     SDL_PollEvent(&event);
