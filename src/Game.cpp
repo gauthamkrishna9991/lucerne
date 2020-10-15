@@ -46,9 +46,7 @@ void Game::init(const char* title, int xpos, int ypos, int width, int height, bo
     } else {
         isRunning = false;
     }
-    // get player texture, subroutine from texture manager
-    // playerTex = TextureManager::LoadTexture("assets/player.png", renderer);
-
+    // Get player and enemy game object
     player = new GameObject("assets/player.png", renderer, 0, 0);
     enemy = new GameObject("assets/enemy.png", renderer, 60, 60);
 }
