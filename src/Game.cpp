@@ -25,7 +25,7 @@ void Game::init(const char* title, int xpos, int ypos, int width, int height, bo
     if (SDL_Init(SDL_INIT_EVERYTHING) == 0) {
         std::cout << "Subsystems Initialized " << std::endl;
         window = SDL_CreateWindow(title, xpos, ypos, width, height, FLAGS);
-
+        // if window exists
         if (window) {
             std::cout << "Window Created" << std::endl;
         } else {
@@ -33,7 +33,8 @@ void Game::init(const char* title, int xpos, int ypos, int width, int height, bo
             // if unable to create a window, exit with 1
             exit(1);
         }
-
+        // renderer to render characters, objects etc.
+        // we'll push it to the window when render is over.
         renderer = SDL_CreateRenderer(window, -1, 0);
 
         if (renderer) {
