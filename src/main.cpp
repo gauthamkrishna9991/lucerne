@@ -26,8 +26,10 @@ int main
 
     Uint32 frameStart;
     int frameTime;
-
+    
+    // create a game
     game = new Game();
+    // window with name, positions and full screen status
     game->init("GKEngine", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 800, 600, false);
     while(game->is_running()) {
         // get the ticks for start frame
