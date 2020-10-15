@@ -22,6 +22,7 @@ void Game::init(const char* title, int xpos, int ypos, int width, int height, bo
     if (fullscreen) {
         FLAGS = SDL_WINDOW_FULLSCREEN;
     }
+    // Try to initialize and see if it works
     if (SDL_Init(SDL_INIT_EVERYTHING) == 0) {
         std::cout << "Subsystems Initialized " << std::endl;
         window = SDL_CreateWindow(title, xpos, ypos, width, height, FLAGS);
