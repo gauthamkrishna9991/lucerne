@@ -6,7 +6,7 @@
 // maybe we'll use it somewhere. Keep it for now
 #define PROJECT_NAME "com.github.gauthamkrishna9991.lucerne"
 
-// game object
+// Game Object
 Game *game = nullptr;
 
 int main
