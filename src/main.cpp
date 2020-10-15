@@ -46,5 +46,6 @@ int main
     }
     // clean everything after exiting the game
     game->clean();
+    // return a zero value
     return (0);
 }
