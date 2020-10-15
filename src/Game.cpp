@@ -27,9 +27,12 @@ void Game::init(const char* title, int xpos, int ypos, int width, int height, bo
         window = SDL_CreateWindow(title, xpos, ypos, width, height, FLAGS);
         // if window exists
         if (window) {
+            // window does not return null
             std::cout << "Window Created" << std::endl;
         } else {
+            // if window returns null game can't be started. Exit gracefully.
             std::cout << "Error showing window: " << SDL_GetError() << std::endl;
+            SDL_Quit();
             // if unable to create a window, exit with 1
             exit(1);
         }
@@ -42,6 +45,7 @@ void Game::init(const char* title, int xpos, int ypos, int width, int height, bo
             std::cout << "Renderer Created." << std::endl;
         } else {
             std::cout << "Error creating renderer: " << SDL_GetError() << std::endl;
+            SDL_Quit();
             //  if unable to create a renderer, exit with 1
             exit(2);
         }
