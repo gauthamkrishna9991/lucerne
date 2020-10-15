@@ -18,8 +18,11 @@ Game::~Game() {
 }
 
 void Game::init(const char* title, int xpos, int ypos, int width, int height, bool fullscreen) {
+    // default if fullscreen flag is not set
     int FLAGS = SDL_WINDOW_SHOWN;
+    // if fullscreen flag is set
     if (fullscreen) {
+        // change flag to enable fullscreen
         FLAGS = SDL_WINDOW_FULLSCREEN;
     }
     // Try to initialize and see if it works
