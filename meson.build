@@ -18,16 +18,15 @@ zlib = dependency('zlib')
 # SDL2 image dependency
 sdl2_image = dependency('SDL2_image')
 
+
+# get all source files from src
+subdir('src')
+
 # create an executable
 # name: lucerne
-# sources:
-#   - main.cpp
-#   - Game.cpp
-#   - Game.hpp
-#   - TextureManager.cpp
-#   - TextureManager.hpp
-#   - GameObject.cpp
-#   - GameObject.hpp
+# source: 
+#   src (from 'src' directory)
+#   check meson.build file in that directory for more information
 # dependencies:
 #   - sdl2
 #   - libpng16
@@ -36,15 +35,7 @@ sdl2_image = dependency('SDL2_image')
 # is it installable?: yes
 exe = executable(
   'lucerne',
-  [
-    'main.cpp',
-    'Game.cpp',
-    'Game.hpp',
-    'TextureManager.cpp',
-    'TextureManager.hpp',
-    'GameObject.cpp',
-    'GameObject.hpp'
-  ],
+  src,
   dependencies : [
     sdl2,
     libpng16,
