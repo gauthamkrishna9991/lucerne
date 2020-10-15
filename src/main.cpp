@@ -38,12 +38,13 @@ int main
 
         // frame time to reach the end
         frameTime = SDL_GetTicks() - frameStart;
-
+        //  to make sure the game runs at 60fps
         if (frameDelay > frameTime) {
             SDL_Delay(frameDelay - frameTime);
         }
 
     }
+    // clean everything after exiting the game
     game->clean();
     return (0);
 }
