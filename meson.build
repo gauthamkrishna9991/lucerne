@@ -25,7 +25,7 @@ subdir('src')
 # create an executable
 # name: lucerne
 # source: 
-#   src (from 'src' directory)
+#   src (from 'src' directory), check that later
 #   check meson.build file in that directory for more information
 # dependencies:
 #   - sdl2
