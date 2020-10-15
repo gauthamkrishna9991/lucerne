@@ -43,14 +43,17 @@ void Game::init(const char* title, int xpos, int ypos, int width, int height, bo
         // renderer to render characters, objects etc.
         // we'll push it to the window when render is over.
         renderer = SDL_CreateRenderer(window, -1, 0);
-
+        // if renderer exists
         if (renderer) {
+            // set render color as white for now
             SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
             std::cout << "Renderer Created." << std::endl;
         } else {
+            // if not created, send error
             std::cout << "Error creating renderer: " << SDL_GetError() << std::endl;
+            // clean up all data
             SDL_Quit();
-            //  if unable to create a renderer, exit with 1
+            // exit with 2
             exit(2);
         }
         isRunning = true;
