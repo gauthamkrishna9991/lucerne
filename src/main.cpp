@@ -1,3 +1,10 @@
+/**
+ *  Lucerne - A Tutorial of SDL2, done by Goutham Krishna K V
+ *  DO NOT THIS PROJECT IS LICENSED USING MIT License,
+ *  AND NO WARRANTIES OF SORT HOLDS OTHER THAN THE ONES
+ *  THE LICENSE DESCRIBES.
+ *  If not recieved, assume this project to include the MIT License
+*/
 #include <iostream>
 
 // Include the Game Header
