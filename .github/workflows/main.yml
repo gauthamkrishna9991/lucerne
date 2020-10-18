@@ -23,7 +23,7 @@ jobs:
       - uses: actions/checkout@v2
       # Install all the files needed
       - name: Install Meson and Ninja
-        run: sudo apt-get install meson ninja -y
+        run: sudo apt-get install meson -y
       
       # Runs a single command using the runners shell
       - name: Meson Build
