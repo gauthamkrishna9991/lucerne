@@ -29,7 +29,7 @@ jobs:
         uses: BSFishy/meson-build@v1.0.1
         with:
           # The action to run
-          action: compile
+          action: test
           # The directory to build the project to
           directory: debug
           meson-version: 0.53.2
