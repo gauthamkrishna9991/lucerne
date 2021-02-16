@@ -1,7 +1,9 @@
 # project name: com.github.gauthamkrishna9991.lucerne
 # language/type of project: cpp
 # version: 0.1
-project('com.github.gauthamkrishna9991.lucerne', 'cpp',
+project(
+  'com.github.gauthamkrishna9991.lucerne',
+  'cpp',
   version : '0.1',
   default_options : [
     'warning_level=3',
@@ -42,6 +44,8 @@ exe = executable(
     zlib,  
     sdl2_image
   ],
+  link_with: lucerne_link_dirs,
+  include_directories: lucerne_include_dirs,
   install : true
 )
 

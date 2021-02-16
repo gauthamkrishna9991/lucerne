@@ -1,11 +1,12 @@
 /**
  *  Lucerne - A Tutorial of SDL2, done by Goutham Krishna K V
- *  DO NOT THIS PROJECT IS LICENSED USING MIT License,
+ *  THIS PROJECT IS LICENSED USING MIT License,
  *  AND NO WARRANTIES OF SORT HOLDS OTHER THAN THE ONES
  *  THE LICENSE DESCRIBES.
  *  If not recieved, assume this project to include the MIT License
 */
 #include <iostream>
+#include <logger/Logger.hpp>
 
 // Include the Game Header
 #include "Game.hpp"
@@ -21,6 +22,8 @@ int main
     // int argc,
     // char **argv
 ) {
+    logger::Logger mainlogger = logger::Logger("main");
+    mainlogger.Debug("Initializing Application");
     // this is for limiting framerate
     const int FPS = 60;
     // framedelay does almost the same thing
@@ -31,6 +34,7 @@ int main
     int frameTime;
     
     // create a game
+    mainlogger.Debug("Initializing Game");
     game = new Game();
     // window with name, positions and full screen status
     game->init("GKEngine", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 800, 600, false);
@@ -53,5 +57,6 @@ int main
     // clean everything after exiting the game
     game->clean();
     // return a zero value
+    mainlogger.Debug("App Closing");
     return (0);
 }

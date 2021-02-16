@@ -16,6 +16,13 @@ initial_src = [
     'TextureManager.hpp'
 ]
 
+# include and link dirs
+lucerne_include_dirs = []
+lucerne_link_dirs = []
+
+# including utils
+subdir('utils')
+
 # final source list
 src = []
 

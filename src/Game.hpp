@@ -6,9 +6,12 @@
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_image.h>
 #include <iostream>
+// import logger from the logger library
+#include <logger/Logger.hpp>
 
 class Game {
-
+private:
+    logger::Logger logger;
 public:
     // constructor for game class
     Game();

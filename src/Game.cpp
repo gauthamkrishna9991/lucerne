@@ -10,7 +10,7 @@ SDL_Rect srcR, destR;
 GameObject *player, *enemy;
 
 Game::Game() {
-
+    this->logger = logger::Logger("Game");
 }
 
 Game::~Game() {
@@ -22,20 +22,21 @@ void Game::init(const char* title, int xpos, int ypos, int width, int height, bo
     int FLAGS = SDL_WINDOW_SHOWN;
     // if fullscreen flag is set
     if (fullscreen) {
+        this->logger.Debug("Check if window is full-screen");
         // change flag to enable fullscreen
         FLAGS = SDL_WINDOW_FULLSCREEN;
     }
     // Try to initialize and see if it works
     if (SDL_Init(SDL_INIT_EVERYTHING) == 0) {
-        std::cout << "Subsystems Initialized " << std::endl;
+        this->logger.Debug("Subsystems Initialized");
         window = SDL_CreateWindow(title, xpos, ypos, width, height, FLAGS);
         // if window exists
         if (window) {
             // window does not return null
-            std::cout << "Window Created" << std::endl;
+            this->logger.Info("Window Created");
         } else {
             // if window returns null game can't be started. Exit gracefully.
-            std::cout << "Error showing window: " << SDL_GetError() << std::endl;
+            this->logger.Error("Error showing window: " + std::string(SDL_GetError()));
             SDL_Quit();
             // if unable to create a window, exit with 1
             exit(1);
@@ -46,11 +47,11 @@ void Game::init(const char* title, int xpos, int ypos, int width, int height, bo
         // if renderer exists
         if (renderer) {
             // set render color as white for now
-            SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
-            std::cout << "Renderer Created." << std::endl;
+            SDL_SetRenderDrawColor(renderer, 255, 255, 255, 0);
+            this->logger.Info("Renderer Created.");
         } else {
             // if not created, send error
-            std::cout << "Error creating renderer: " << SDL_GetError() << std::endl;
+            this->logger.Error("Error creating renderer: " + std::string(SDL_GetError()));
             // clean up all data
             SDL_Quit();
             // exit with 2
@@ -102,5 +103,5 @@ void Game::clean() {
     SDL_DestroyRenderer(renderer);
     // quit
     SDL_Quit();
-    std::cout << "Game Cleaned" << std::endl;
+    this->logger.Info("Game Cleaned");
 }
